@@ -22,7 +22,7 @@
                 decimal totalPrice = 0;
                 foreach (var item in Items)
                 {
-                    totalPrice += item.Price;
+                    totalPrice += (item.Price * item.Quantity);
                 }
                 return totalPrice;
             }

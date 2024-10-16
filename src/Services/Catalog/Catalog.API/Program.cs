@@ -2,14 +2,18 @@ using Catalog.API.Data;
 using Catalog.API.Repository;
 using Catalog.API.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 var databaseSettings = builder.Configuration.GetSection("DatabaseSettings").Get<DatabaseSettings>();
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
+
+var mongoClient = new MongoClient(databaseSettings.ConnectionString);
 
 builder.Services.AddDbContext<CatalogContext>(options => options.UseMongoDB(databaseSettings.ConnectionString ?? "", databaseSettings.DatabaseName ?? ""));
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>();
