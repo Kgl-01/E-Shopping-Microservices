@@ -19,7 +19,7 @@ namespace Discount.gRPC.Services
 
         public override async Task<ApplyDiscount> GetDiscount(GetDiscountRequest request, ServerCallContext context)
         {
-            Coupon coupon = await _repository.GetDiscount(request.ProductName);
+            var coupon = await _repository.GetDiscount(request.ProductName);
 
             if (coupon == null)
             {
@@ -39,6 +39,8 @@ namespace Discount.gRPC.Services
             Coupon coupon = request.Coupon.toCoupon();
             await _repository.CreateDiscount(coupon);
             _logger.LogInformation("Discount is successfully created. ProductName : {ProductName}", coupon.ProductName);
+
+            _logger.LogInformation("Discount is successfully fetched. ProductName : {ProductName} of {Amount}", coupon.ProductName, coupon.Amount);
 
             CouponModel couponModel = coupon.asCouponModel();
 

@@ -19,7 +19,7 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] string category = "")
+        public async Task<IActionResult> GetAll()
         {
             var products = await _productsRepo.GetAllAsync();
 

@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Basket-Discount-Ordering",
+    "Projects": [
+      {
+        "Path": "Services\\Basket\\Basket.API\\Basket.API.csproj",
+        "Action": "Start",
+        "DebugTarget": "Basket.API"
+      },
+      {
+        "Path": "Services\\Discount\\Discount.gRPC\\Discount.gRPC.csproj",
+        "Action": "Start",
+        "DebugTarget": "Discount.gRPC"
+      },
+      {
+        "Path": "Services\\Ordering\\Ordering.API\\Ordering.API.csproj",
+        "Action": "Start",
+        "DebugTarget": "Ordering.API"
+      }
+    ]
+  }
+]

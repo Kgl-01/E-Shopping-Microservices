@@ -14,6 +14,7 @@ services:
       - "6379:6379"
 
   discountdb:
+    image: postgres:16.6
     container_name: discountdb
     environment:
       - POSTGRES_USER=admin
@@ -24,6 +25,22 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data/ 
+  
+  orderdb:
+    container_name: orderdb
+    environment:
+        MSSQL_SA_PASSWORD: "143.Amma"
+        ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+        - "1433:1433"
+
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+        - "5672:5672"
+        - "15672:15672"
   
   pgadmin:
     container_name: pgadmin
@@ -63,8 +80,11 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - "CacheSettings:CacheString=basketdb:6379" 
+      - "GrpcSettings:DiscountUrl=http://discount.grpc:8080"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
     depends_on:
       - basketdb
+      - rabbitmq 
     ports:
       - "8002:8080"
 
@@ -79,4 +99,44 @@ services:
       - discountdb
     ports:
       - "8003:8080"
+
+
+  discount.grpc:
+    container_name: discount.grpc
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:DiscountDB=Server=discountdb;Port=5432;Database=DiscountDb;Username=admin;Password=admin1234;" 
+    ports:
+      - "8004:8080"
+    depends_on:
+      - discountdb
+
+
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrdeDb;User=sa;Password=143.Amma;TrustServerCertificate=True" 
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672" 
+    ports:
+      - "8006:8080"
+    depends_on:
+      - orderdb
+      - rabbitmq 
+
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    ports:
+      - "8068:8080"
+    depends_on:
+      - catalog.api
+      - basket.api
+      - discount.api
+      - ordering.api
 
