@@ -1,3 +1,8 @@
+using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using EventBus.Messages.Common;
 using MassTransit;
 using Ordering.API.EventBusConsumer;
@@ -7,7 +12,7 @@ using Ordering.Application;
 using Ordering.Infrastructure;
 using Ordering.Infrastructure.Persistence;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -29,7 +34,6 @@ builder.Services.AddMassTransit(config =>
         {
             c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
         });
-
         cfg.ConfigureEndpoints(ctx);
     });
 });

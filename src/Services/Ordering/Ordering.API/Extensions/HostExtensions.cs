@@ -1,5 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System;
+using System.Threading;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace Ordering.API.Extensions
 {
@@ -7,12 +12,12 @@ namespace Ordering.API.Extensions
     {
         public static IHost MigrateDatabase<TContext>(this IHost host, Action<TContext, IServiceProvider> seeder, int? retry = 0) where TContext : DbContext
         {
-            int retryForAvailability = retry.Value;
+            int retryForAvailability = retry ?? 0;
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var logger = services.GetRequiredService<ILogger<TContext>>();
-                var context = services.GetService<TContext>();
+                var context = services.GetRequiredService<TContext>();
 
                 try
                 {
@@ -28,7 +33,7 @@ namespace Ordering.API.Extensions
                     if (retryForAvailability < 50)
                     {
                         retryForAvailability++;
-                        System.Threading.Thread.Sleep(2000);
+                        Thread.Sleep(2000);
                         MigrateDatabase<TContext>(host, seeder, retryForAvailability);
                     }
                 }

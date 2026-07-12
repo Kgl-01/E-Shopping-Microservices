@@ -3,7 +3,7 @@ services:
     image: mongo
 
   basketdb:
-    image: redis:alpine 
+    image: redis:alpine
 
   discountdb:
     image: postgres
@@ -62,7 +62,3 @@ volumes:
   postgres_data:
   pgadmin_data:
   order_data:
-
-
-
-

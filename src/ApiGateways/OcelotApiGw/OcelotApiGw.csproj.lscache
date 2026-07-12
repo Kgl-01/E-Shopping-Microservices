@@ -1,0 +1,110 @@
+version=1
+
+# This file caches language service data to improve the performance of C# Dev Kit.
+# It is not intended for manual editing. It can safely be deleted and will be
+# regenerated automatically. For more information, see https://aka.ms/lscache
+#
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
+
+[project]
+language=C#
+primary
+lastDtbSucceeded
+
+[properties]
+AssemblyName=OcelotApiGw
+CommandLineArgsForDesignTimeEvaluation=-langversion:12.0 -define:TRACE
+CompilerGeneratedFilesOutputPath=
+MaxSupportedLangVersion=12.0
+ProjectAssetsFile=<PATH>obj/project.assets.json
+RootNamespace=OcelotApiGw
+RunAnalyzers=
+RunAnalyzersDuringLiveAnalysis=
+SolutionPath=*Undefined*
+TargetFrameworkIdentifier=.NETCoreApp
+TargetPath=<PATH>bin/Debug/net8.0/OcelotApiGw.dll
+TargetRefPath=<PATH>obj/Debug/net8.0/ref/OcelotApiGw.dll
+TemporaryDependencyNodeTargetIdentifier=net8.0
+
+[commandLineArguments]
+/noconfig
+/unsafe-
+/checked-
+/nowarn:1701,1702,1701,1702,8002
+/fullpaths
+/nostdlib+
+/errorreport:prompt
+/warn:8
+/define:TRACE;DEBUG;NET;NET8_0;NETCOREAPP;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER
+/highentropyva+
+/nullable:enable
+/debug+
+/debug:portable
+/filealign:512
+/optimize-
+/out:obj\Debug\net8.0\OcelotApiGw.dll
+/refout:obj\Debug\net8.0\refint\OcelotApiGw.dll
+/target:exe
+/warnaserror-
+/utf8output
+/deterministic+
+/langversion:12.0
+/warnaserror+:NU1605,SYSLIB0011
+
+[sourceFiles]
+obj/Debug/net8.0/
+ .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+ OcelotApiGw.AssemblyInfo.cs
+ OcelotApiGw.GlobalUsings.g.cs
+Program.cs
+
+[metadataReferences]
+<NUGET>/
+ cachemanager.core/2.0.0-beta-1629/lib/netstandard2.0/CacheManager.Core.dll
+ cachemanager.microsoft.extensions.configuration/2.0.0-beta-1629/lib/netstandard2.0/CacheManager.Microsoft.Extensions.Configuration.dll
+ cachemanager.microsoft.extensions.logging/2.0.0-beta-1629/lib/netstandard2.0/CacheManager.Microsoft.Extensions.Logging.dll
+ fluentvalidation/11.11.0/lib/net8.0/FluentValidation.dll
+ ipaddressrange/6.1.0/lib/net8.0/IPAddressRange.dll
+ microsoft.aspnetcore.jsonpatch/8.0.11/lib/net8.0/Microsoft.AspNetCore.JsonPatch.dll
+ microsoft.aspnetcore.middlewareanalysis/8.0.11/lib/net8.0/Microsoft.AspNetCore.MiddlewareAnalysis.dll
+ microsoft.aspnetcore.mvc.newtonsoftjson/8.0.11/lib/net8.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+ microsoft.extensions.configuration.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+ microsoft.extensions.configuration.binder/9.0.0/lib/net8.0/Microsoft.Extensions.Configuration.Binder.dll
+ microsoft.extensions.configuration/9.0.0/lib/net8.0/Microsoft.Extensions.Configuration.dll
+ microsoft.extensions.dependencyinjection.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.dependencyinjection/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
+ microsoft.extensions.diagnosticadapter/3.1.32/lib/netcoreapp2.0/Microsoft.Extensions.DiagnosticAdapter.dll
+ microsoft.extensions.logging.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.logging/9.0.0/lib/net8.0/Microsoft.Extensions.Logging.dll
+ microsoft.extensions.options/9.0.0/lib/net8.0/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/9.0.0/lib/net8.0/Microsoft.Extensions.Primitives.dll
+ newtonsoft.json.bson/1.0.2/lib/netstandard2.0/Newtonsoft.Json.Bson.dll
+ newtonsoft.json/13.0.3/lib/net6.0/Newtonsoft.Json.dll
+ ocelot.cache.cachemanager/23.4.2/lib/net8.0/Ocelot.Cache.CacheManager.dll
+ ocelot/23.4.2/lib/net8.0/Ocelot.dll
+ system.configuration.configurationmanager/4.5.0/ref/netstandard2.0/System.Configuration.ConfigurationManager.dll
+ system.diagnostics.diagnosticsource/9.0.0/lib/net8.0/System.Diagnostics.DiagnosticSource.dll
+ system.diagnostics.performancecounter/4.5.0/ref/netstandard2.0/System.Diagnostics.PerformanceCounter.dll
+ system.security.accesscontrol/4.5.0/ref/netstandard2.0/System.Security.AccessControl.dll
+ system.security.permissions/4.5.0/ref/netstandard2.0/System.Security.Permissions.dll
+ system.security.principal.windows/4.5.0/ref/netstandard2.0/System.Security.Principal.Windows.dll
+
+[analyzerReferences]
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk.Razor/source-generators/
+ Microsoft.AspNetCore.Razor.Utilities.Shared.dll
+ Microsoft.CodeAnalysis.Razor.Compiler.dll
+ Microsoft.Extensions.ObjectPool.dll
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk.Web/analyzers/cs/
+ Microsoft.AspNetCore.Analyzers.dll
+ Microsoft.AspNetCore.Mvc.Analyzers.dll
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk/analyzers/
+ Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+ Microsoft.CodeAnalysis.NetAnalyzers.dll
+<NUGET>/
+ microsoft.extensions.logging.abstractions/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+ microsoft.extensions.options/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
+
+[analyzerConfigFiles]
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig
+obj/Debug/net8.0/OcelotApiGw.GeneratedMSBuildEditorConfig.editorconfig

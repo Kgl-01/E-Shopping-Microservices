@@ -1,0 +1,115 @@
+version=1
+
+# This file caches language service data to improve the performance of C# Dev Kit.
+# It is not intended for manual editing. It can safely be deleted and will be
+# regenerated automatically. For more information, see https://aka.ms/lscache
+#
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
+
+[project]
+language=C#
+primary
+lastDtbSucceeded
+
+[properties]
+AssemblyName=Ordering.Application
+CommandLineArgsForDesignTimeEvaluation=-langversion:12.0 -define:TRACE
+CompilerGeneratedFilesOutputPath=
+MaxSupportedLangVersion=12.0
+ProjectAssetsFile=<PATH>obj/project.assets.json
+RootNamespace=Ordering.Application
+RunAnalyzers=
+RunAnalyzersDuringLiveAnalysis=
+SolutionPath=*Undefined*
+TargetFrameworkIdentifier=.NETCoreApp
+TargetPath=<PATH>bin/Debug/net8.0/Ordering.Application.dll
+TargetRefPath=<PATH>obj/Debug/net8.0/ref/Ordering.Application.dll
+TemporaryDependencyNodeTargetIdentifier=net8.0
+
+[commandLineArguments]
+/noconfig
+/unsafe-
+/checked-
+/nowarn:1701,1702,1701,1702,8002
+/fullpaths
+/nostdlib+
+/errorreport:prompt
+/warn:8
+/define:TRACE;DEBUG;NET;NET8_0;NETCOREAPP;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER
+/highentropyva+
+/nullable:enable
+/debug+
+/debug:portable
+/filealign:512
+/optimize-
+/out:obj\Debug\net8.0\Ordering.Application.dll
+/refout:obj\Debug\net8.0\refint\Ordering.Application.dll
+/target:library
+/warnaserror-
+/utf8output
+/deterministic+
+/langversion:12.0
+/warnaserror+:NU1605,SYSLIB0011
+
+[sourceFiles]
+ApplicationServiceregistration.cs
+Behaviours/
+ UnhandledExceptionBehaviour.cs
+ ValidationBehaviour.cs
+Contracts/
+ Inrfastructure/IEmailService.cs
+ Persistence/
+  IAsyncRepository.cs
+  IOrderRepository.cs
+Exceptions/
+ NotFoundException.cs
+ ValidationException.cs
+Features/Orders/Commands/CheckoutOrder/
+ CheckoutOrderCommand.cs
+ CheckoutOrderCommandHandler.cs
+ CheckoutOrderCommandValidator.cs
+Features/Orders/Commands/DeleteOrder/
+ DeleteOrderCommand.cs
+ DeleteOrderCommandHandler.cs
+Features/Orders/Commands/UpdateOrder/
+ UpdateOrderCommand.cs
+ UpdateOrderCommandHandler.cs
+ UpdateOrderCommandValidator.cs
+Features/Orders/Queries/GetOrdersList/
+ GetOrderListQueryHandler.cs
+ GetOrdersListQuery.cs
+ OrderDTO.cs
+Mappings/MappingProfile.cs
+Models/
+ Email.cs
+ EmailSettings.cs
+obj/Debug/net8.0/
+ .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+ Ordering.Application.AssemblyInfo.cs
+ Ordering.Application.GlobalUsings.g.cs
+
+[metadataReferences]
+../Ordering.Domain/obj/Debug/net8.0/ref/Ordering.Domain.dll
+<NUGET>/
+ automapper/13.0.1/lib/net6.0/AutoMapper.dll
+ fluentvalidation.dependencyinjectionextensions/11.11.0/lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll
+ fluentvalidation/11.11.0/lib/net8.0/FluentValidation.dll
+ mediatr.contracts/2.0.1/lib/netstandard2.0/MediatR.Contracts.dll
+ mediatr/12.4.1/lib/net6.0/MediatR.dll
+ microsoft.extensions.dependencyinjection.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.logging.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.options/6.0.0/lib/netstandard2.1/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/6.0.0/lib/net6.0/Microsoft.Extensions.Primitives.dll
+ system.diagnostics.diagnosticsource/9.0.0/lib/net8.0/System.Diagnostics.DiagnosticSource.dll
+ system.runtime.compilerservices.unsafe/6.0.0/lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll
+
+[analyzerReferences]
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk/analyzers/
+ Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+ Microsoft.CodeAnalysis.NetAnalyzers.dll
+<NUGET>/microsoft.extensions.logging.abstractions/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+
+[analyzerConfigFiles]
+<DOTNET>/sdk/10.0.300/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig
+obj/Debug/net8.0/Ordering.Application.GeneratedMSBuildEditorConfig.editorconfig
